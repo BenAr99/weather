@@ -6,16 +6,6 @@
     "build": "webpack -mode production",
     "start": "webpack-dev-server --mode development --open"
   },
-  "repository": {
-    "type": "git"
-  },
-  "keywords": [
-    "js",
-    "javascript",
-    "webpack"
-  ],
-  "author": "Kuliev Suleiman",
-  "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
