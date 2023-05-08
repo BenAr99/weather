@@ -1,17 +1,12 @@
-const person = {
-  name: 'Yoda',
-  designation: 'Jedi Master ',
-};
+// eslint-disable-next-line import/no-extraneous-dependencies
+import ymaps from 'ymaps';
 
-function trainJedi(jediWarrion) {
-  if (jediWarrion.name === 'Yoda') {
-    console.log('No need! already trained');
-  }
-  console.log(`Training ${jediWarrion.name} complete`);
-}
-
-trainJedi(person);
-trainJedi({
-  name: 'Adeel',
-  designation: 'padawan',
-});
+ymaps
+  .load()
+  .then((maps) => {
+    const map = new maps.Map('your-map-container', {
+      center: [-8.369326, 115.166023],
+      zoom: 7,
+    });
+  })
+  .catch((error) => console.log('Failed to load Yandex Maps', error));
