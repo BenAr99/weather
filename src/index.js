@@ -1,12 +1,7 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import ymaps from 'ymaps';
+import * as ymaps3 from 'ymaps3';
 
-ymaps
-  .load()
-  .then((maps) => {
-    const map = new maps.Map('your-map-container', {
-      center: [-8.369326, 115.166023],
-      zoom: 7,
-    });
-  })
-  .catch((error) => console.log('Failed to load Yandex Maps', error));
+console.log(ymaps3);
+ymaps3.ready.then(() => {
+  const { YMaps } = ymaps3;
+  new YMaps({});
+});
