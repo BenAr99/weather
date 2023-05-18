@@ -1,17 +1,5 @@
-const person = {
-  name: 'Yoda',
-  designation: 'Jedi Master ',
-};
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/style.css';
+import { initMap } from './modules/map/map';
 
-function trainJedi(jediWarrion) {
-  if (jediWarrion.name === 'Yoda') {
-    console.log('No need! already trained');
-  }
-  console.log(`Training ${jediWarrion.name} complete`);
-}
-
-trainJedi(person);
-trainJedi({
-  name: 'Adeel',
-  designation: 'padawan',
-});
+initMap();
