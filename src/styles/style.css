@@ -1,6 +1,11 @@
-.content {
+body {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.map-web {
+  width: 800px;
+  height: 500px;
 }
