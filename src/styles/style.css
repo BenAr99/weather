@@ -5,6 +5,15 @@ body {
     justify-content: center;
 }
 
+.info-weather-box{
+  display: flex;
+}
+
+.detailed-weather{
+  display: flex;
+  flex-direction: column;
+}
+
 .map-web {
   width: 800px;
   height: 500px;
