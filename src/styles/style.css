@@ -4,17 +4,30 @@
 }
 
 body {
+    display: flex;
     font-size: 24px;
     font-weight: bold;
-    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     font-family: "Roboto Light", sans-serif;
+}
+
+.container-weather{
+  display: flex;
+  flex-direction: column;
 }
 
 .info-weather-box{
   display: flex;
+}
+
+.icon-main-weather {
+  position: relative;
+  top: 10px;
+  right: 58px;
+  width: 130px;
+  height: 140px;
 }
 
 /*.location-weather {*/
@@ -28,8 +41,13 @@ body {
   font-size: 34px;
 }
 
-.degrees-weather{
-  font-size: 280px;
+.degrees-main-weather{
+  font-size: 250px;
+}
+
+.next-day-weather{
+  display: flex;
+  justify-content: space-between;
 }
 
 .map-web {

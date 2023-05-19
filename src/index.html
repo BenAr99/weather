@@ -8,24 +8,49 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container-weather">
-    <span class="location-weather">Samara</span>
-    <img>
-    <div class="info-weather-box">
-      <span class="degrees-weather">4</span>
-      <div class="detailed-weather text-uppercase">
-        <span class="description-weather">Дождь например</span>
-        <span class="wind-speed"></span>
-        <span class="humidity"></span>
-        <span class="precipitation "></span>
+<div class="container-weather">
+  <span class="location-weather">Samara</span>
+  <div class="info-weather-box">
+    <span class="degrees-main-weather">4</span>
+    <img class="icon-main-weather" src="http://openweathermap.org/img/wn/13d.png">
+    <div class="detailed-weather text-uppercase">
+      <span class="description-weather">Дождь например</span>
+      <span class="wind-speed"></span>
+      <span class="humidity"></span>
+      <span class="precipitation "></span>
+    </div>
+  </div>
+  <div class="next-day-weather">
+    <div class="next-days">
+      <span>denb nedeli</span>
+      <div class="mini-description-next-day">
+        <span>градус</span>
+        <img>
+      </div>
+    </div>
+
+    <div class="next-days">
+      <span>denb nedeli</span>
+      <div class="mini-description-next-day">
+        <span>градус</span>
+        <img>
+      </div>
+    </div>
+
+    <div class="next-days">
+      <span>denb nedeli</span>
+      <div class="mini-description-next-day">
+        <span>градус</span>
+        <img>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container-map">
-    <div class="input-group mb-3" id="geocoder-container">
-    </div>
-    <div class="map-web" id="map"></div>
+<div class="container-map">
+  <div class="input-group mb-3" id="geocoder-container">
   </div>
+  <div class="map-web" id="map"></div>
+</div>
 </body>
 </html>
