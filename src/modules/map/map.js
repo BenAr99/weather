@@ -6,15 +6,9 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
 import { getInfoWeather } from '../../request';
+import { ArrangementReceivedData } from '../weather/weather';
 
 function initGeocoderActions(geocoder, map) {
-  const locationWeather = document.querySelector('.location-weather');
-  const degreesWeather = document.querySelector('.degrees-weather');
-  const descriptionWeather = document.querySelector('.description-weather');
-  const windSpeed = document.querySelector('.wind-speed');
-  const precipitation = document.querySelector('.precipitation');
-  const humidityWeather = document.querySelector('.humidity'); // назвал humidityWeather
-  // тк в промисе есть humidity, так и так работает, но мне кажется лучше без совпадений
   geocoder.on('result', (results) => {
     console.log(results);
     const lon = results.result.center[0];
@@ -23,14 +17,7 @@ function initGeocoderActions(geocoder, map) {
       center: results.result.center,
     });
     getInfoWeather(lon, lat).then((item) => {
-      console.log(item); // можно было вывести город с промиса погоды, но я вывожу с геокодера,
-      // так как в питере указывается остров - 23 stroka
-      locationWeather.textContent = results.result.text;
-      degreesWeather.textContent = Math.ceil(item.main.temp).toString();
-      descriptionWeather.textContent = item.weather[0].description;
-      windSpeed.textContent = item.wind.speed;
-      precipitation.textContent = item.clouds.all;
-      humidityWeather.textContent = item.main.humidity;
+      ArrangementReceivedData(results, item);
     });
   });
 }
