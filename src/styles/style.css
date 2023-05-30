@@ -5,7 +5,7 @@
 
 body {
     display: flex;
-    font-size: 24px;
+    font-size: 36px;
     font-weight: bold;
     flex-direction: row;
     align-items: center;
@@ -30,11 +30,6 @@ body {
   height: 140px;
 }
 
-/*.location-weather {*/
-/*  font-size: 34px;*/
-/*  font-weight: bold;*/
-/*}*/
-
 .detailed-weather{
   display: flex;
   flex-direction: column;
@@ -45,7 +40,7 @@ body {
   font-size: 250px;
 }
 
-.next-day-weather{
+.next-day-description-weather{
   display: flex;
   justify-content: space-between;
 }
@@ -53,4 +48,10 @@ body {
 .map-web {
   width: 800px;
   height: 500px;
+}
+
+.additional-day-icon {
+  position: relative;
+  bottom: 17px;
+  right: 12px;
 }

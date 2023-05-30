@@ -10,7 +10,6 @@ import { ArrangementReceivedData } from '../weather/weather';
 
 function initGeocoderActions(geocoder, map) {
   geocoder.on('result', (results) => {
-    console.log(results);
     const lon = results.result.center[0];
     const lat = results.result.center[1];
     map.flyTo({
