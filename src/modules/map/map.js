@@ -5,11 +5,18 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
+import { getInfoWeather } from '../../request';
+import { arrangementReceivedData } from '../weather/weather';
 
 function initGeocoderActions(geocoder, map) {
   geocoder.on('result', (results) => {
+    const lon = results.result.center[0];
+    const lat = results.result.center[1];
     map.flyTo({
       center: results.result.center,
+    });
+    getInfoWeather(lon, lat).then((item) => {
+      arrangementReceivedData(results, item);
     });
   });
 }
