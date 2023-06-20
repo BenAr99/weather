@@ -85,7 +85,7 @@ function initTextInfoWeather(results, item) {
   mainTextInfo(results, item);
   sortingInfoWeather(item);
 }
-export function ArrangementReceivedData(results, item) {
+export function arrangementReceivedData(results, item) {
   initTextInfoWeather(results, item);
   initIconInfoWeather(item);
 }
