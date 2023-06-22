@@ -1,11 +1,9 @@
 import { getBackground } from '../../request';
-import { locationWeather } from '../weather/weather';
 
-const backgroundImg = document.querySelector('body');
+const backgroundImg = document.querySelector('.background-image');
 export function initBackgroundImg() {
   getBackground('city').then((data) => {
-    console.log(data);
-    backgroundImg.style.background = `url(${data[0].urls.regular}) no-repeat`;
-    console.log(backgroundImg.style.background);
+    backgroundImg.style.background = `url(${data[0].urls.regular}) no-repeat center center fixed`;
+    backgroundImg.style.backgroundSize = 'cover';
   });
 }

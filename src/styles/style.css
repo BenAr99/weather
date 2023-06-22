@@ -4,40 +4,24 @@
 }
 
 body {
-    /*width: 100%;*/
-    /*position: fixed;*/
-    /*left:0px;*/
-    /*width:100%;*/
-    /*height:100%;*/
-    /*z-index:-1;*/
-  background: url("https://images.unsplash.com/photo-1467269204594-9661b134dd2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTU1Mjd8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODYyNTAzNzR8&ixlib=rb-4.0.3&q=80&w=1080") no-repeat ;
-  /*center center fixed  */
-  /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    background-size: cover;
-    /*margin:0;*/
-    /*padding:0;*/
-    display: flex;
-    font-size: 36px;
-    font-weight: bold;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    font-family: "Roboto Light", sans-serif;
+  height: 100%;
+  background: url("../assets/image/bg-main.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  font-size: 36px;
+  font-weight: bold;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Roboto Light", sans-serif;
 }
 
-.background{
-  position: absolute;
-  width: 100%;
-}
-
-.container-weather{
+.container-weather {
   display: flex;
   flex-direction: column;
 }
 
-.info-weather-box{
+.info-weather-box {
   display: flex;
 }
 
@@ -49,17 +33,17 @@ body {
   height: 140px;
 }
 
-.detailed-weather{
+.detailed-weather {
   display: flex;
   flex-direction: column;
   font-size: 34px;
 }
 
-.degrees-main-weather{
+.degrees-main-weather {
   font-size: 250px;
 }
 
-.next-day-description-weather{
+.next-day-description-weather {
   display: flex;
   justify-content: space-between;
 }
