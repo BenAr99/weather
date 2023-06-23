@@ -10,12 +10,12 @@ export async function getBackground(description) {
   return console.error('Не удалось загрузить данные о погоде');
 }
 
-const backgroundImg = document.querySelector('body');
 export function initBackgroundImg() {
+  const backgroundImg = document.querySelector('.background-image');
   getBackground('overcast clouds').then((data) => {
-    backgroundImg.style.background = `url("${data[0].urls.regular}") no-repeat center center fixed`;
+    backgroundImg.style.background = `url("${data[0].urls.regular}")`;
+    backgroundImg.style.backgroundPosition = 'center';
+    backgroundImg.style.backgroundRepeat = 'no-repeat';
     backgroundImg.style.backgroundSize = 'cover';
-    backgroundImg.style.opacity = '0.6';
-    // backgroundImg.style.backgroundColor = 'rgba(0, 0, 0, .5)';
   });
 }
