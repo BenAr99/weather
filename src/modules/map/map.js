@@ -5,8 +5,7 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
-import { getInfoWeather } from '../../request';
-import { arrangementReceivedData } from '../weather/weather';
+import { arrangementReceivedData, getInfoWeather } from '../weather/weather';
 
 function initGeocoderActions(geocoder, map) {
   geocoder.on('result', (results) => {
