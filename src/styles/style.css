@@ -14,9 +14,6 @@ body {
   display: flex;
   font-size: 36px;
   font-weight: bold;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
   font-family: "Roboto Light", sans-serif;
 }
 
@@ -24,33 +21,55 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   z-index: 10;
 }
 
 .background-image {
   position: absolute;
-  z-index: auto;
+  z-index: 4;
   width:100%;
   height:100%;
 }
 
 .overlay {
   position: absolute;
+  z-index: 5;
   width: 100%;
   height: 100%;
   background: black;
   opacity: 0.6;
 }
 
+.button-setting{
+  display: flex;
+  /*justify-content: start;*/
+  /*align-items: start;*/
+}
+
+.refresh-bg{
+  z-index: 6;
+  /*position: absolute;*/
+  width: 44px;
+  height: 44px;
+}
+
 .container-weather {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.text-info-weather-container {
   display: flex;
   flex-direction: column;
 }
 
-.info-weather-box {
+.info-main-box {
   display: flex;
 }
 
