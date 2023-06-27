@@ -44,13 +44,27 @@ body {
 
 .button-setting{
   display: flex;
-  /*justify-content: start;*/
-  /*align-items: start;*/
+  margin-bottom: 60px;
+}
+
+.map-web {
+  border-radius: 8px;
+  width: 700px;
+  height: 500px;
+  margin-bottom: 70px;
+}
+
+.input-group {
+  display: flex;
+
+}
+
+.mapboxgl-ctrl-geocoder {
+  margin-bottom: 70px;
 }
 
 .refresh-bg{
-  z-index: 6;
-  /*position: absolute;*/
+  padding: 28px;
   width: 44px;
   height: 44px;
 }
@@ -94,11 +108,6 @@ body {
 .next-day-description-weather {
   display: flex;
   justify-content: space-between;
-}
-
-.map-web {
-  width: 800px;
-  height: 500px;
 }
 
 .additional-day-icon {

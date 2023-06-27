@@ -19,3 +19,8 @@ export function initBackgroundImg() {
     backgroundImg.style.backgroundSize = 'cover';
   });
 }
+
+const refreshBg = document.querySelector('.refresh-bg');
+refreshBg.style.background = 'url("assets/icons/image-on-svgrepo-com.svg") no-repeat center center';
+
+refreshBg.onclick = initBackgroundImg;
