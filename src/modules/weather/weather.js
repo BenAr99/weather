@@ -82,11 +82,6 @@ function creatingTempAdditionalDays(weatherNextThreeDay) {
   });
 }
 
-function nextDayInfoWeather(weatherNextThreeDay) {
-  creatingAdditionalDays(weatherNextThreeDay);
-  creatingTempAdditionalDays(weatherNextThreeDay);
-}
-
 function sortingInfoWeather(item) {
   /// Отбирает среди 12 меток погоды по дню, именно в 3 часа
   const weatherNextThreeDay = item.list.filter(
@@ -94,15 +89,13 @@ function sortingInfoWeather(item) {
       date.dt_txt.split(' ')[0] > item.list[0].dt_txt.split(' ')[0] &&
       date.dt_txt.split(' ')[1] === '15:00:00',
   );
-  nextDayInfoWeather(weatherNextThreeDay);
+  creatingAdditionalDays(weatherNextThreeDay);
+  creatingTempAdditionalDays(weatherNextThreeDay);
 }
 
-function initTextInfoWeather(results, item) {
+export function initTextInfoWeather(results, item) {
+  initBackgroundImg();
   mainTextInfo(results, item);
   sortingInfoWeather(item);
-}
-export function arrangementReceivedData(results, item) {
-  initBackgroundImg();
-  initTextInfoWeather(results, item);
   initIconInfoWeather(item);
 }

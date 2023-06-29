@@ -20,7 +20,8 @@ export function initBackgroundImg() {
   });
 }
 
-const refreshBg = document.querySelector('.refresh-bg');
-refreshBg.style.background = 'url("assets/icons/image-on-svgrepo-com.svg") no-repeat center center';
+const refreshBackgroundButton = document.querySelector('.refresh-background-button');
+refreshBackgroundButton.style.background =
+  'url("assets/icons/image-on-svgrepo-com.svg") no-repeat center center';
 
-refreshBg.onclick = initBackgroundImg;
+refreshBackgroundButton.onclick = initBackgroundImg;
