@@ -8,11 +8,50 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="container-map">
-    <div class="input-group mb-3" id="geocoder-container">
-
+<div class="container-weather">
+  <span class="location-weather">Samara</span>
+  <span class="date-main-day"></span>
+  <div class="info-weather-box">
+    <span class="degrees-main-weather">4</span>
+    <img class="icon-main-weather" src="http://openweathermap.org/img/wn/13d.png">
+    <div class="detailed-weather text-uppercase">
+      <span class="description-weather"></span>
+      <span class="wind-speed"></span>
+      <span class="humidity"></span>
+      <span class="precipitation "></span>
     </div>
-    <div class="map-web" id="map"></div>
   </div>
+  <div class="next-day-description-weather">
+    <div class="next-day">
+      <span class="day-week"></span>
+      <div class="mini-description-next-day">
+        <span></span>
+        <img class="additional-day-icon">
+      </div>
+    </div>
+
+    <div class="next-days">
+      <span class="day-week"></span>
+      <div class="mini-description-next-day">
+        <span></span>
+        <img class="additional-day-icon">
+      </div>
+    </div>
+
+    <div class="next-days">
+      <span class="day-week"></span>
+      <div class="mini-description-next-day">
+        <span></span>
+        <img class="additional-day-icon">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-map">
+  <div class="input-group mb-3" id="geocoder-container">
+  </div>
+  <div class="map-web" id="map"></div>
+</div>
 </body>
 </html>
