@@ -8,14 +8,9 @@ import { mapboxApiKey } from '../../../environment';
 
 function setFlyAction(geocoder, map) {
   geocoder.on('result', (results) => {
-    // const lon = results.result.center[0];
-    // const lat = results.result.center[1];
     map.flyTo({
       center: results.result.center,
     });
-    // getInfoWeather(lon, lat).then((item) => {
-    //   ArrangementReceivedData(results, item);
-    // });
   });
 }
 
