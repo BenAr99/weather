@@ -7,7 +7,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
 import { arrangementReceivedData, getInfoWeather } from '../weather/weather';
 
-function initGeocoderActions(geocoder, map) {
+function setFlyAction(geocoder, map) {
   geocoder.on('result', (results) => {
     const lon = results.result.center[0];
     const lat = results.result.center[1];
@@ -20,23 +20,24 @@ function initGeocoderActions(geocoder, map) {
   });
 }
 
-function initGeocoder(map) {
+export function getGeocoder(map, geocoderContainer) {
   const geocoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
     mapboxgl,
   });
-  geocoder.addTo('#geocoder-container');
-  initGeocoderActions(geocoder, map);
+  geocoder.addTo(geocoderContainer);
+  setFlyAction(map);
+
+  return geocoder;
 }
 
-export function initMap() {
+export function getMap() {
   mapboxgl.accessToken = mapboxApiKey;
 
-  const map = new mapboxgl.Map({
+  return new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
     center: [53, 50], // starting position [lng, lat]
     zoom: 9, // starting zoom
   });
-  initGeocoder(map);
 }

@@ -1,23 +1,24 @@
-import { initBackgroundImg } from '../background/background';
 import { weatherApiKey } from '../../../environment';
-
-export async function getInfoWeather(lon, lat) {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${weatherApiKey}`,
-  );
-  if (response.ok) {
-    return response.json();
-  }
-  return console.error('Не удалось загрузить данные о погоде');
-}
+import { initBackgroundImg } from '../background/background';
 
 const dateMainDay = document.querySelector('.date-main-day');
-export const locationWeather = document.querySelector('.location-weather');
+const locationWeather = document.querySelector('.location-weather');
 const degreesWeather = document.querySelector('.degrees-main-weather');
 const descriptionWeather = document.querySelector('.description-weather');
 const windSpeed = document.querySelector('.wind-speed');
 const precipitation = document.querySelector('.precipitation');
 const humidityWeather = document.querySelector('.humidity');
+
+export async function getInfoWeather(lon, lat) {
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?units=metric&lat=${lat}&lon=${lon}&appid=${weatherApiKey}`,
+    );
+    return response.json();
+  } catch (err) {
+    throw new Error('Не удалось загрузить данные о погоде');
+  }
+}
 
 function initIconInfoWeather(item) {
   const mainIconWeather = document.querySelector('.icon-main-weather');
@@ -39,32 +40,34 @@ function mainTextInfo(results, item) {
 function creatingAdditionalDays(weatherNextThreeDay) {
   const initDayWeek = document.querySelectorAll('.day-week');
   initDayWeek.forEach((element, index) => {
+    let dayOfWeekText;
     const dayWeek = new Date(weatherNextThreeDay[index].dt_txt.split(' ')[0]).getDay();
-    switch (dayWeek.toString()) {
-      case '0':
-        element.textContent = 'Sunday';
+    switch (dayWeek) {
+      case 0:
+        dayOfWeekText = 'Sunday';
         break;
-      case '1':
-        element.textContent = 'Monday';
+      case 1:
+        dayOfWeekText = 'Monday';
         break;
-      case '2':
-        element.textContent = 'Tuesday';
+      case 2:
+        dayOfWeekText = 'Tuesday';
         break;
-      case '3':
-        element.textContent = 'Wednesday';
+      case 3:
+        dayOfWeekText = 'Wednesday';
         break;
-      case '4':
-        element.textContent = 'Thursday';
+      case 4:
+        dayOfWeekText = 'Thursday';
         break;
-      case '5':
-        element.textContent = 'Friday';
+      case 5:
+        dayOfWeekText = 'Friday';
         break;
-      case '6':
-        element.textContent = 'Saturday';
+      case 6:
+        dayOfWeekText = 'Saturday';
         break;
       default:
-      // eslint требует писать default, но не знаю что в него вписать поиск в другой ветке
+        throw new Error('Я не боюсь ошибаться');
     }
+    element.textContent = dayOfWeekText;
   });
 }
 
@@ -95,8 +98,6 @@ function sortingInfoWeather(item) {
 }
 
 function initTextInfoWeather(results, item) {
-  console.log(results);
-  console.log(item);
   mainTextInfo(results, item);
   sortingInfoWeather(item);
 }

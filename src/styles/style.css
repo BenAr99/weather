@@ -115,3 +115,15 @@ body {
   bottom: 17px;
   right: 12px;
 }
+
+.additional-day-icon {
+  position: relative;
+  bottom: 17px;
+  right: 12px;
+}
+
+.error-notification {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
