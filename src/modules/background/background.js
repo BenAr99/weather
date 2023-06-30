@@ -12,18 +12,17 @@ export async function getBackground(description) {
   }
 }
 
-export function initBackgroundImg() {
-  const backgroundImg = document.querySelector('.background-image');
-  getBackground('overcast clouds')
-    .then((data) => {
-      backgroundImg.style.background = `url("${data[0].urls.regular}")`;
-      backgroundImg.style.backgroundPosition = 'center';
-      backgroundImg.style.backgroundRepeat = 'no-repeat';
-      backgroundImg.style.backgroundSize = 'cover';
-    })
-    .catch((value) => {
-      showErrorNotification(value.message);
-    });
+export async function initBackgroundImg() {
+  try {
+    const backgroundImg = document.querySelector('.background-image');
+    const data = await getBackground('overcast clouds');
+    backgroundImg.style.background = `url("${data[0].urls.regular}")`;
+    backgroundImg.style.backgroundPosition = 'center';
+    backgroundImg.style.backgroundRepeat = 'no-repeat';
+    backgroundImg.style.backgroundSize = 'cover';
+  } catch (value) {
+    showErrorNotification(value.message);
+  }
 }
 
 const refreshBackgroundButton = document.querySelector('.refresh-background-button');

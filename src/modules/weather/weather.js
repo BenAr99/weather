@@ -3,7 +3,7 @@ import { weatherApiKey } from '../../../environment';
 const dateMainDay = document.querySelector('.date-main-day');
 const locationWeather = document.querySelector('.location-weather');
 const degreesWeather = document.querySelector('.degrees-main-weather');
-const descriptionWeather = document.querySelector('.description-weather');
+export const descriptionWeather = document.querySelector('.description-weather');
 const windSpeed = document.querySelector('.wind-speed');
 const precipitation = document.querySelector('.precipitation');
 const humidityWeather = document.querySelector('.humidity');
