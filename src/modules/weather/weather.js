@@ -1,5 +1,4 @@
 import { weatherApiKey } from '../../../environment';
-import { initBackgroundImg } from '../background/background';
 
 const dateMainDay = document.querySelector('.date-main-day');
 const locationWeather = document.querySelector('.location-weather');
@@ -94,7 +93,6 @@ function sortingInfoWeather(item) {
 }
 
 export function initTextInfoWeather(results, item) {
-  initBackgroundImg();
   mainTextInfo(results, item);
   sortingInfoWeather(item);
   initIconInfoWeather(item);

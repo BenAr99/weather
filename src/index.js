@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.css';
 
-import { getGeocoder, getMap } from './modules/map/map';
+import { getGeocoder, getMap, setFlyAction } from './modules/map/map';
 import { getInfoWeather, initTextInfoWeather } from './modules/weather/weather';
 import { showErrorNotification } from './shared/notification';
 import { initBackgroundImg } from './modules/background/background';
@@ -15,9 +15,10 @@ geocoder.on('result', (results) => {
   getInfoWeather(lon, lat)
     .then((item) => {
       initTextInfoWeather(results, item);
+      initBackgroundImg();
+      setFlyAction();
     })
     .catch((value) => {
       showErrorNotification(value.message);
     });
 });
-initBackgroundImg();

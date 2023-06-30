@@ -123,7 +123,8 @@ body {
 }
 
 .error-notification {
+  z-index: 10;
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  left: 40px;
 }

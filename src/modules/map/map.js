@@ -7,13 +7,15 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
 import { initTextInfoWeather, getInfoWeather } from '../weather/weather';
 
-function setFlyAction(geocoder, map) {
+export function setFlyAction(geocoder, map) {
   geocoder.on('result', (results) => {
+    console.log('d');
     const lon = results.result.center[0];
     const lat = results.result.center[1];
     map.flyTo({
       center: results.result.center,
     });
+    console.log('ds');
     getInfoWeather(lon, lat).then((item) => {
       initTextInfoWeather(results, item);
     });
