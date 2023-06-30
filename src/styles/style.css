@@ -3,22 +3,87 @@
   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 }
 
-body {
-    display: flex;
-    font-size: 36px;
-    font-weight: bold;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    font-family: "Roboto Light", sans-serif;
+html {
+  height: 100%;
 }
 
-.container-weather{
+body {
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Roboto Light", sans-serif;
+}
+
+.body-web {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.background-image {
+  position: absolute;
+  z-index: 4;
+  width:100%;
+  height:100%;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+}
+
+.button-setting{
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.map-web {
+  border-radius: 8px;
+  width: 700px;
+  height: 500px;
+  margin-bottom: 70px;
+}
+
+.input-group {
+  display: flex;
+
+}
+
+.mapboxgl-ctrl-geocoder {
+  margin-bottom: 70px;
+}
+
+.refresh-background-button{
+  padding: 28px;
+  width: 44px;
+  height: 44px;
+}
+
+.container-weather {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.text-info-weather-container {
   display: flex;
   flex-direction: column;
 }
 
-.info-weather-box{
+.info-main-box {
   display: flex;
 }
 
@@ -30,24 +95,25 @@ body {
   height: 140px;
 }
 
-.detailed-weather{
+.detailed-weather {
   display: flex;
   flex-direction: column;
   font-size: 34px;
 }
 
-.degrees-main-weather{
+.degrees-main-weather {
   font-size: 250px;
 }
 
-.next-day-description-weather{
+.next-day-description-weather {
   display: flex;
   justify-content: space-between;
 }
 
-.map-web {
-  width: 800px;
-  height: 500px;
+.additional-day-icon {
+  position: relative;
+  bottom: 17px;
+  right: 12px;
 }
 
 .additional-day-icon {
@@ -57,7 +123,8 @@ body {
 }
 
 .error-notification {
+  z-index: 10;
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  left: 40px;
 }

@@ -6,11 +6,9 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { mapboxApiKey } from '../../../environment';
 
-function setFlyAction(geocoder, map) {
-  geocoder.on('result', (results) => {
-    map.flyTo({
-      center: results.result.center,
-    });
+export function focusOn(map, center) {
+  map.flyTo({
+    center,
   });
 }
 
@@ -20,7 +18,6 @@ export function getGeocoder(map, geocoderContainer) {
     mapboxgl,
   });
   geocoder.addTo(geocoderContainer);
-  setFlyAction(map);
 
   return geocoder;
 }

@@ -3,7 +3,7 @@ import { weatherApiKey } from '../../../environment';
 const dateMainDay = document.querySelector('.date-main-day');
 const locationWeather = document.querySelector('.location-weather');
 const degreesWeather = document.querySelector('.degrees-main-weather');
-const descriptionWeather = document.querySelector('.description-weather');
+export const descriptionWeather = document.querySelector('.description-weather');
 const windSpeed = document.querySelector('.wind-speed');
 const precipitation = document.querySelector('.precipitation');
 const humidityWeather = document.querySelector('.humidity');
@@ -82,6 +82,7 @@ function creatingTempAdditionalDays(weatherNextThreeDay) {
 }
 
 function sortingInfoWeather(item) {
+  /// Отбирает среди 12 меток погоды по дню, именно в 3 часа
   const weatherNextThreeDay = item.list.filter(
     (date) =>
       date.dt_txt.split(' ')[0] > item.list[0].dt_txt.split(' ')[0] &&
@@ -93,6 +94,6 @@ function sortingInfoWeather(item) {
 
 export function initTextInfoWeather(results, item) {
   mainTextInfo(results, item);
-  initIconInfoWeather(item);
   sortingInfoWeather(item);
+  initIconInfoWeather(item);
 }
