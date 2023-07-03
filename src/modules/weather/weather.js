@@ -28,7 +28,7 @@ function mainTextInfo(results, item) {
   dateMainDay.textContent = new Date(item.list[0].dt_txt.split(' ')[0]);
   dateMainDay.textContent = dateMainDay.textContent.split(' ').splice(0, 4).join(' ');
 
-  locationWeather.textContent = results.result.place_name;
+  locationWeather.textContent = results.toUpperCase();
   degreesWeather.textContent = Math.ceil(item.list[0].main.temp).toString();
   descriptionWeather.textContent = item.list[0].weather[0].description;
   windSpeed.textContent = `Wind: ${item.list[0].wind.speed}m/s`;
