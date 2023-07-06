@@ -21,7 +21,6 @@ export async function getUserCity(lon, lat) {
 }
 
 export function focusOn(map, center) {
-  console.log(center, 'center');
   map.flyTo({
     center,
   });

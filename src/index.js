@@ -15,7 +15,6 @@ const geocoder = getGeocoder(initMap, '#geocoder-container');
 function setWeather(map, valueCity, coordinates) {
   getInfoWeather(coordinates[0], coordinates[1])
     .then((item) => {
-      console.log(item);
       focusOn(map, coordinates);
       initTextInfoWeather(valueCity, item);
     })
