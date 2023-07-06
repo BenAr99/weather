@@ -82,7 +82,6 @@ function creatingTempAdditionalDays(weatherNextThreeDay) {
 }
 
 function sortingInfoWeather(item) {
-  /// Отбирает среди 12 меток погоды по дню, именно в 3 часа
   const weatherNextThreeDay = item.list.filter(
     (date) =>
       date.dt_txt.split(' ')[0] > item.list[0].dt_txt.split(' ')[0] &&
